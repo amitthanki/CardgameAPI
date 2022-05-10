@@ -1,36 +1,35 @@
-﻿using CardPlayGame.Interfaces;
-
-namespace CardPlayGame.Services
+﻿
+namespace CardPlayGame.Models
 {
-    public class Card1
+    public class Card
     {
-        public int SPADES = 1;  
+        public int SPADES = 1;
         public int HEARTS = 3;
         public int DIAMONDS = 0;
         public int CLUBS = 2;
         public int JOKER = 4;
 
-        public int ACE = 1;      
-        public int JACK = 11;    
-        public int QUEEN = 12;   
+        public int ACE = 1;
+        public int JACK = 11;
+        public int QUEEN = 12;
         public int KING = 13;
 
-      
+
         private int suit;
 
-        
+
         private int value;
 
         /**
          * Creates a Joker, with 1 as the associated value.  (Note that
          * "new Card()" is equivalent to "new Card(1,Card.JOKER)".)
          */
-        public Card1()
+        public Card()
         {
             suit = JOKER;
             value = 1;
-        }       
-        public Card1(int theValue, int theSuit)
+        }
+        public Card(int theValue, int theSuit)
         {
             if (theSuit != SPADES && theSuit != HEARTS && theSuit != DIAMONDS &&
                   theSuit != CLUBS && theSuit != JOKER)
@@ -41,18 +40,18 @@ namespace CardPlayGame.Services
             suit = theSuit;
         }
 
-        
+
         public int getSuit()
         {
             return suit;
         }
 
-      
+
         public int getValue()
         {
             return value;
         }
-        
+
         public string getSuitAsString()
         {
             switch (suit)
@@ -64,7 +63,7 @@ namespace CardPlayGame.Services
                 default: return "Joker";
             }
         }
-      
+
         public string getValueAsString()
         {
             if (suit == JOKER)
@@ -88,7 +87,8 @@ namespace CardPlayGame.Services
                     default: return "King";
                 }
             }
-        }       
+        }
+
         public string getAllCards()
         {
             if (suit == JOKER)
